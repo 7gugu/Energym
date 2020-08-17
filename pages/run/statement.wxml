@@ -1,0 +1,70 @@
+<view class="flex justify-center">
+	<map id="myMap" wx:if="{{runType == 0}}" style="width: 100%; height: 300px;" show-location latitude="{{latitude}}" longitude="{{longitude}}" polyline="{{polyline}}"></map>
+</view>
+<view class="bg-white margin-sm">
+	<view class="flex">
+		<view class="flex-sub margin-left margin-right">
+			<view class="cu-bar">
+				<view class="action">
+					<text class="cuIcon-titles text-blue"></text>
+					<text wx:if="{{runType==0}}">户外跑</text>
+					<text wx:if="{{runType==1}}">室内跑</text>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+	</view>
+<view class="bg-white padding margin-sm">
+	<view class="flex">
+		<view class="flex-sub margin-left margin-right">
+			<view class="cu-bar">
+				<view class="action">
+					<text class="cuIcon-title text-blue"></text>运动时长
+				</view>
+			</view>
+			<view class="flex ">
+				<text class="margin-left text-bold text-xxl">{{time_data}}</text>
+			</view>
+		</view>
+		<view class="flex-sub margin-left margin-right">
+			<view class="cu-bar ">
+				<view class="action">
+					<text class="cuIcon-title text-green"></text>运动距离
+				</view>
+			</view>
+			<view class="flex ">
+				<text class="margin-left text-bold text-xxl">{{distance_data}} Km</text>
+			</view>
+		</view>
+	</view>
+
+	<view class="flex">
+		<view class="flex-sub margin-left margin-right">
+			<view class="cu-bar ">
+				<view class="action">
+					<text class="cuIcon-title text-orange"></text>平均配速
+				</view>
+			</view>
+			<view class="flex">
+				<text class="margin-left text-bold text-xxl">{{speed_data}}</text>
+			</view>
+		</view>
+		<view class="flex-sub margin-bottom margin-left margin-right">
+			<view class="cu-bar ">
+				<view class="action">
+					<text class="cuIcon-title text-red"></text>卡路里
+				</view>
+			</view>
+			<view class="flex">
+				<text class="margin-left text-bold text-xxl">{{kcal_data}} Kcal</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view style="position: fixed;width: 100%;bottom: 30px;z-index: 1024;">
+	<view class="flex">
+		<button class="flex-sub cu-btn bg-grey round lg margin-left margin-right" style="padding:0 40rpx" bindtap="toDetail">详情</button>
+		<button class="flex-sub cu-btn bg-blue round lg margin-left margin-right" style="padding:0 40rpx" bindtap="toShare">分享</button>
+	</view>
+</view>

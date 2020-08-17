@@ -1,0 +1,101 @@
+<view wx:if="{{steps == '1'}}">
+	<view class="">
+		<view class="text-center padding-sm margin-top">
+			<text class="text-grey text-xl">欢迎使用Lebu运动小程序</text>
+		</view>
+		<view class="text-center">
+			<text class="text-grey text-sm">完善您的信息让我们为您提供更精准的服务</text>
+		</view>
+		<view class="text-center margin-top-xl">
+			<text class="text-grey text-lg">请问您的性别是?</text>
+		</view>
+		<view class="flex margin-top-md padding justify-center">
+			<button wx:if="{{sex}}" class="cu-btn bg-blue margin-left margin-right round lg" bindtap="changeSex" data-sex="true">男</button>
+			<button wx:if="{{!sex}}" class="cu-btn line-blue margin-left margin-right round lg" bindtap="changeSex" data-sex="true">男</button>
+			<button wx:if="{{!sex}}" class="cu-btn bg-red margin-left margin-right round lg" bindtap="changeSex" data-sex="false">女</button>
+			<button wx:if="{{sex}}" class="cu-btn line-red margin-left margin-right round lg" bindtap="changeSex" data-sex="false">女</button>
+		</view>
+	</view>
+
+	<view class="text-center padding margin-top">
+		<button class="cu-btn bg-grey round lg" bindtap="next" data-steps="2">下一步</button>
+	</view>
+
+	<view class="text-center padding margin-top">
+  <text class="text-grey text-lg">性别的不同,将会影响卡路里计算的准确性哦。</text>
+</view>
+</view>
+
+<view wx:if="{{steps == '2'}}">
+	<view class="">
+
+		<view class="text-center margin-top-xl">
+			<text class="text-grey text-lg">请问您的身高和体重是?</text>
+		</view>
+		<view class="flex margin-top-md padding justify-center bg">
+			<form>
+				<view class="cu-form-group margin-top " style="width:300px">
+					<view class="title">身高</view>
+					<picker bindchange="heightSetting" value="{{height_index}}" range="{{height_picker}}">
+						<view class="picker">
+							{{height_picker[height_index]}} Cm
+						</view>
+					</picker>
+				</view>
+				<view class="cu-form-group margin-top">
+					<view class="title">体重</view>
+					<picker bindchange="weightSetting" value="{{weight_index}}" range="{{weight_picker}}">
+						<view class="picker">
+							{{weight_picker[weight_index]}} Kg
+						</view>
+					</picker>
+				</view>
+			</form>
+		</view>
+	</view>
+
+	<view class="text-center padding margin-top">
+  <button class="cu-btn bg-grey margin-left margin-right round lg" bindtap="next" data-steps="1">上一步</button>
+		<button class="cu-btn bg-grey margin-left margin-right round lg" bindtap="next" data-steps="3">下一步</button>
+	</view>
+	<view class="text-center padding margin-top">
+  <text class="text-grey text-lg">身高体重的不同,将会影响卡路里和运动里程,运动配速的计算准确性哦。</text>
+</view>
+</view>
+
+<view wx:if="{{steps == '3'}}">
+	<view class="">
+
+		<view class="text-center margin-top-xl">
+			<text class="text-grey text-lg">请设定您的路程和卡路里目标:</text>
+		</view>
+		<view class="flex margin-top-md padding justify-center bg">
+			<form>
+				<view class="cu-form-group margin-top " style="width:300px">
+					<view class="title">路程</view>
+					<picker bindchange="distanceSetting" value="{{distance_index}}" range="{{distance_picker}}">
+						<view class="picker">
+							{{distance_picker[distance_index]}} Km
+						</view>
+					</picker>
+				</view>
+				<view class="cu-form-group margin-top">
+					<view class="title">卡路里</view>
+					<picker bindchange="kcalSetting" value="{{kcal_index}}" range="{{kcal_picker}}">
+						<view class="picker">
+							{{kcal_picker[kcal_index]}} Kcal
+						</view>
+					</picker>
+				</view>
+			</form>
+		</view>
+		<view class="text-center padding margin-top">
+  <text class="text-grey text-lg">每周目标的完成进度,将在每周日自动重置。</text>
+</view>
+	</view>
+
+	<view class="text-center padding margin-top">
+  <button class="cu-btn bg-grey margin-left margin-right round lg" bindtap="next" data-steps="2">上一步</button>
+		<button class="cu-btn bg-grey margin-left margin-right round lg" bindtap="next" data-steps="4">完成</button>
+	</view>
+</view>

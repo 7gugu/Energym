@@ -1,0 +1,15 @@
+<view class="">
+<view class="text-center padding margin-top-xl">
+  <text class="text-grey text-xl">计划向导</text>
+</view>
+    <view class="flex padding margin-top-xl justify-center">
+      <view class="cu-avatar xl round"><text class="cuIcon-people"></text></view>
+    </view>
+    <view class="flex margin-top padding justify-center">
+      <button class="cu-btn bg-green round lg" bindtap="redirect">开始使用</button>
+    </view>
+</view>
+
+<view class="text-center padding margin-top">
+  <text class="text-grey text-xl">运动数据仅保存于本地,请妥善保管。</text>
+</view>

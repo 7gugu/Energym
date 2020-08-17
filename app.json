@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/run/index",
+    "pages/run/statement",
+    "pages/setting/index",
+    "pages/me/index",
+    "pages/history/index",
+    "pages/history/detail",
+    "pages/aboutus/index",
+    "pages/login/index",
+    "pages/login/setting",
+    "pages/share/index",
+    "pages/bmi/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "@navBgColor",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationBarTitleText": "活力健身房"
+  },
+  "usingComponents": {
+
+  },
+  
+  "tabBar": {
+    "backgroundColor": "@tabBarBackgroundColor",
+    "borderStyle": "white",
+    "selectedColor": "@tabBarSelectedColor",
+    "color": "@tabBarColor",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "@runIcon",
+      "selectedIconPath": "@runSelectedIcon",
+      "text": "跑步"
+    },
+    {
+      "pagePath": "pages/me/index",
+      "iconPath": "@personIcon",
+      "selectedIconPath": "@personSelectedIcon",
+      "text": "我"
+    }]
+  },
+  "permission": {
+    "scope.userLocationBackend": {
+      "desc": "您的位置信息将用于绘制您的运动轨迹"
+    },
+    "scope.writePhotosAlbum": {
+      "desc": "您的相册授权仅用于保存您的运动海报"
+    }
+  },
+  "darkmode": false,
+  "themeLocation":"theme.json",
+  "cloud": true,
+  "requiredBackgroundModes": ["location"],
+  "sitemapLocation": "sitemap.json"
+}
+

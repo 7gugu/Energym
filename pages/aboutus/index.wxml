@@ -1,0 +1,26 @@
+<view class='margin-xl bg-white padding-xl radius shadow-lg' >
+  <view class='text-center margin-bottom text-lg  text-grey'>关于我们</view>
+  <view class='text-content'>
+    <view>感谢您的使用与支持!</view>
+    <view class='margin-top-sm'>这个项目是我很久之前基于网页端就已经开发完成的一个WebAPP,但苦于没有很好的分发,所以没有什么动静。这次参加小程序比赛,基于AID公司的论文,升级了检测算法到2.0,加入了动态阈值检测,数据降噪,轴向监测等多方面的升级,使得数据精准度有了大幅提升。</view>
+    <view class='margin-top-sm'>项目已经开源,<view class='margin-top-sm' bindtap="copy" data-type="gitee"><text class="text-blue">https://gitee.com/7gugu/energy_gym</text></view></view>
+    <view class='margin-top-sm'>Powered By 7gugu</view>   
+  </view>
+</view>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>联系方式</view>
+  <view class='text-content'>
+   <view class='margin-top-sm' bindtap="copy" data-type="email">邮箱:<text class="text-blue">gz7gugu@qq.com</text></view>
+    <view class='margin-top-sm' bindtap="copy" data-type="blog">博客:<text class="text-blue">https://www.7gugu.com</text></view>
+  </view>
+</view>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>隐私存储</view>
+  <view class='text-content'>
+    <view>小程序的所有数据都只能保存在本地!</view>
+    <view class='margin-top-sm'>为了各位用户的隐私考虑,本小程序记录的所有运动数据,以及个人数据都只会保存在本地当中,只要你不删除这个小程序,数据就会永久的保存在你的手机之上。</view>
+    <view class='margin-top-sm'>如果您需要我们提供云存储服务,欢迎在"联系客服"处留言,我们将在评估后,在合适时间加入的。</view>
+  </view>
+</view>

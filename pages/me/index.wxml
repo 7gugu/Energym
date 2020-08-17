@@ -1,0 +1,63 @@
+  <view class="bg-white">
+  	<view wx:if="{{userInfo.nickName == 'lebu'}}">
+
+  		<view class="flex padding solid-bottom">
+  			<view class="flex-sub"></view>
+  			<view class="flex-sub">
+  				<button class="cu-btn bg-green round lg" open-type="getUserInfo" bindgetuserinfo="saveUserInfo">授权登录</button>
+  			</view>
+  			<view class="flex-sub"></view>
+  		</view>
+
+  	</view>
+  	<view wx:else>
+    
+  		<view class="flex padding solid-bottom">
+  			<view class="flex-twice">
+  				<view class="text-xxl padding ">
+  					<text class="text-black text-bold">{{userInfo.nickName}}</text>
+  				</view>
+  			</view>
+
+  			<view class="flex-sub">
+  				<view class="cu-avatar xl fr round margin-left" style="background-image:url({{userInfo.avatarUrl}});"></view>
+  			</view>
+  		</view>
+
+  	</view>
+  </view>
+
+
+  <view class="cu-list menu sm-border card-menu margin-top">
+  	<view class="cu-item arrow">
+  		<navigator class="content" hover-class="none" bindtap="click" url="../history/index">
+  			<text class="cuIcon-countdown text-cyan"></text>
+  			<text class="text-grey">历史记录</text>
+  		</navigator>
+  	</view>
+  	<view class="cu-item arrow">
+  		<navigator class="content" hover-class="none" bindtap="click" url="../bmi/index">
+  			<text class="cuIcon-hot text-red"></text>
+  			<text class="text-grey">BMI计算</text>
+  		</navigator>
+  	</view>
+  	<view class="cu-item arrow">
+  		<navigator class="content" hover-class="none" bindtap="click" url="../setting/index">
+  			<text class="cuIcon-settings text-grey"></text>
+  			<text class="text-grey">程序设置</text>
+  		</navigator>
+  	</view>
+  	<view class="cu-item arrow">
+  		<button class="cu-btn content" open-type="contact" bindtap="click">
+  			<text class="cuIcon-service text-olive"></text>
+  			<text class="text-grey">联系客服</text>
+  		</button>
+  	</view>
+  	<view class="cu-item arrow">
+  		<navigator class="content" hover-class="none" bindtap="click" url="../aboutus/index">
+  			<text class="cuIcon-info text-orange"></text>
+  			<text class="text-grey">关于我们</text>
+  		</navigator>
+  	</view>
+
+  </view>

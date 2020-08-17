@@ -1,0 +1,28 @@
+{
+  "light": {
+    "navBgColor": "#f6f6f6",
+    "navTxtStyle": "black",
+    "tabBarColor": "#8a8a8a",
+    "tabBarSelectedColor": "#2c2c2c",
+    "tabBarBackgroundColor": "#f9f9f9",
+    "runSelectedIcon": "icon/run.png",
+    "runIcon": "icon/run-sub.png",
+    "personIcon": "icon/person-sub.png",
+    "personSelectedIcon": "icon/person-2.png",
+    "activityIcon": "icon/activity.png",
+    "activitySelectedIcon": "icon/activity-sub.png"
+  },
+  "dark": {
+    "navBgColor": "#f6f6f6",
+    "navTxtStyle": "black",
+    "tabBarColor": "#8a8a8a",
+    "tabBarSelectedColor": "#2c2c2c",
+    "tabBarBackgroundColor": "#f9f9f9",
+    "runSelectedIcon": "icon/run.png",
+    "runIcon": "icon/run-sub.png",
+    "personIcon": "icon/person-sub.png",
+    "personSelectedIcon": "icon/person-2.png",
+    "activityIcon": "icon/activity.png",
+    "activitySelectedIcon": "icon/activity-sub.png"
+  }
+}

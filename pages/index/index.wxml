@@ -1,0 +1,99 @@
+<view class="bg-white">
+	<view class="flex padding">
+		<view class="flex-sub"></view>
+		<view class="flex-twice">
+			<!-- 运动进度概览 -->
+			<canvas canvas-id="canvasArcbar" id="canvasArcbar" class="charts"></canvas>
+		</view>
+		<view class="flex-sub"></view>
+	</view>
+	<view class="flex padding solid-bottom">
+		<view class="flex-sub"></view>
+		<view class="flex-twice text-center">
+			<button class="cu-btn bg-green round lg" bindtap="toRun">开始跑步</button>
+		</view>
+		<view class="flex-sub"></view>
+	</view>
+	<!-- <view class="cu-bar bg-white solid-bottom margin-top">
+		<view class='action'>
+			<text class='cuIcon-titles text-green '></text> 每周进度
+		</view>
+	</view> -->
+	<view class="flex padding-left padding-right solid-bottom">
+
+		<view class="flex-sub" bindtap="tips" data-type="kcal">
+			<view class="cu-bar bg-white ">
+				<view class="action">
+					<text class="cuIcon-title text-blue"></text>运动里程<text class="cuIcon-info lg text-gray"></text>
+				</view>
+			</view>
+			<view class="flex margin-top">
+				<view class="cu-progress round">
+					<view class="bg-blue" style="width:{{(distance_target == 0)?'100':prog_distance}}%;"></view>
+				</view>
+				<text class="margin-left">{{(distance_target == 0)?'100':prog_distance}}%</text>
+			</view>
+		</view>
+
+		<view class="flex-sub" bindtap="tips" data-type="kcal">
+			<view class="cu-bar bg-white ">
+				<view class="action">
+					<text class="cuIcon-title text-red"></text>卡路里消耗<text class="cuIcon-info lg text-gray"></text>
+				</view>
+			</view>
+			<view class="padding bg-white ">
+				<view class="flex">
+					<view class="cu-progress round">
+						<view class="bg-red" style="width:{{(kcal_target == 0)?'100':prog_kcal}}%;"></view>
+					</view>
+					<text class="margin-left">{{(kcal_target == 0)?'100':prog_kcal}}%</text>
+				</view>
+			</view>
+		</view>
+
+	</view>
+
+	<view class="cu-bar bg-white solid-bottom margin-top">
+		<view class='action'>
+			<text class='cuIcon-titles text-orange '></text> 最近活动
+		</view>
+		<view class='action'>
+			<text class='text-green'bindtap="toHistory">更多</text>
+		</view>
+	</view>
+	<view class="cu-card article  ">
+		<view class="cu-item shadow">
+
+			<view wx:if="{{runinfo_data.length > 0}}">
+				<view bindtap="toDetail" data-id="{{runinfo_data[0].id}}">
+					<view class="title">
+						<view class="text-cut">{{runinfo_data[0].time_format}}</view>
+					</view>
+					<view class="content">
+						<image src="../../icon/run-sub.png" mode="aspectFit" style="height:5.4em"></image>
+						<view class="desc">
+							<view class="text-content"><text >运动里程:{{runinfo_data[0].distance_data}} Km</text></view>
+							<view>
+								<view class="cu-tag bg-green light sm round">{{runinfo_data[0].time_data}}</view>
+								<view class="cu-tag bg-orange light sm round">{{runinfo_data[0].speed_data}}</view>
+								<view class="cu-tag bg-red light sm round">{{runinfo_data[0].kcal_data}} Kcal</view>
+								<view wx:if="{{runinfo_data[0].runType == 0}}" class="cu-tag bg-blue light sm round">户外跑</view>
+							<view wx:if="{{runinfo_data[0].runType == 1}}" class="cu-tag bg-blue light sm round">室内跑</view>
+							</view>
+						</view>
+					</view>
+				</view>
+
+
+
+			</view>
+			<view wx:else>
+				<view class="text-center padding margin-top">
+					<text class="text-grey text-xl">暂无历史运动记录</text>
+				</view>
+			</view>
+
+		</view>
+	</view>
+
+</view>

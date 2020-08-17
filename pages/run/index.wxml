@@ -1,0 +1,153 @@
+<!--pages/run/index.wxml-->
+<scroll-view scroll-x class="bg-white nav" wx:if="{{motion_status == 0}}">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{runType == 0?'text-blue cur':''}}" bindtap="tabSelect" data-id="0">
+      户外跑
+    </view>
+		<view class="cu-item flex-sub {{runType == 1?'text-blue cur':''}}" bindtap="tabSelect" data-id="1">
+      室内跑
+    </view>
+  </view>
+</scroll-view>
+<map id="myMap" wx:if="{{runType == 0}}" style="width: 100%; height: {{screenHeight}};" show-location polyline="{{polyline}}" latitude="{{latitude}}" longitude="{{longitude}}">
+	<corver-view>
+		<corver-view class="cu-card article">
+			<corver-view class="cu-item shadow">
+
+				<corver-view class="flex padding-left padding-right justify-center">
+					<corver-view class="text-center">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-blue"></text>运动时间
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xxl text-bold">
+							{{time_data}}
+						</corver-view>
+					</corver-view>
+
+
+				</corver-view>
+				<corver-view class="flex padding-left padding-right">
+					<corver-view class="flex-sub">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-red"></text>卡路里
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xl text-bold">
+							{{kcal_data}} Kcal
+						</corver-view>
+					</corver-view>
+
+					<corver-view class="flex-sub">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-orange"></text>配速
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xl text-bold">
+							{{speed_data}}
+						</corver-view>
+					</corver-view>
+
+					<corver-view class="flex-sub">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-green"></text>里程
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xl text-bold">
+							{{distance_data}} Km
+						</corver-view>
+					</corver-view>
+
+				</corver-view>
+			</corver-view>
+		</corver-view>
+	</corver-view>
+	<corver-view style="position: fixed;width: 100%;bottom: 30px;z-index: 1024;">
+		<corver-view class="flex justify-center">
+			<button  wx:if="{{motion_status == 0}}" class="cu-btn bg-green margin-left margin-right round lg" style="padding:0 40rpx" bindtap="startRun">开始跑步</button>
+			<button  wx:if="{{motion_status == 1}}" class="cu-btn bg-blue margin-left margin-right round lg" style="padding:0 40rpx" bindtap="pauseRun">暂停跑步</button>
+			<button  wx:if="{{motion_status == 2}}" class="cu-btn bg-orange margin-left margin-right round lg" style="padding:0 40rpx" bindtap="reRun">恢复跑步</button>
+			<button  wx:if="{{motion_status == 1 || motion_status == 2}}" class="cu-btn bg-red margin-left margin-right round lg" style="padding:0 40rpx" bindlongpress="stopRun">长按停止</button>
+		</corver-view>
+	</corver-view>
+</map>
+
+<view wx:if="{{runType == 1}}">
+	<corver-view>
+		<corver-view class="cu-card article">
+			<corver-view class="cu-item shadow">
+
+				<corver-view class="flex padding-left padding-right justify-center">
+					<corver-view class="text-center">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-blue"></text>运动时间
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xxl text-bold">
+							{{time_data}}
+						</corver-view>
+					</corver-view>
+
+
+				</corver-view>
+				<corver-view class="flex padding-left padding-right">
+					<corver-view class="flex-sub">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-red"></text>卡路里
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xl text-bold">
+							{{kcal_data}} Kcal
+						</corver-view>
+					</corver-view>
+
+					<corver-view class="flex-sub">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-orange"></text>配速
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xl text-bold">
+							{{speed_data}}
+						</corver-view>
+					</corver-view>
+
+					<corver-view class="flex-sub">
+						<corver-view class="cu-bar bg-white">
+							<corver-view class="action">
+								<text class="cuIcon-title text-green"></text>里程
+							</corver-view>
+						</corver-view>
+						<corver-view class="flex margin-left text-xl text-bold">
+							{{distance_data}} Km
+						</corver-view>
+					</corver-view>
+
+				</corver-view>
+			</corver-view>
+		</corver-view>
+	</corver-view>
+		<corver-view style="position: fixed;width: 100%;bottom: 30px;z-index: 1024;">
+		<corver-view class="flex justify-center">
+			<button  wx:if="{{motion_status == 0}}" class="cu-btn bg-green margin-left margin-right round lg" style="padding:0 40rpx" bindtap="startRun">开始跑步</button>
+			<button  wx:if="{{motion_status == 1}}" class="cu-btn bg-blue margin-left margin-right round lg" style="padding:0 40rpx" bindtap="pauseRun">暂停跑步</button>
+			<button  wx:if="{{motion_status == 2}}" class="cu-btn bg-orange margin-left margin-right round lg" style="padding:0 40rpx" bindtap="reRun">恢复跑步</button>
+			<button  wx:if="{{motion_status == 1 || motion_status == 2}}" class="cu-btn bg-red margin-left margin-right round lg" style="padding:0 40rpx" bindlongpress="stopRun">长按停止</button>
+		</corver-view>
+	</corver-view>
+
+	<view	class="flex padding-left padding-right justify-center">
+		<view class="flex-sub"></view>
+		<view class="flex-sub">
+		<image src="../../icon/runer.svg" style="height:1500%"></image>
+		</view>
+		<view class="flex-sub"></view>
+	</view>
+	
+</view>

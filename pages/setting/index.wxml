@@ -1,0 +1,62 @@
+<form>
+
+	<view class="cu-form-group">
+		<view class="title">性别</view>
+		<picker bindchange="sexSetting" value="{{sex_index}}" range="{{sex_picker}}">
+			<view class="picker">
+				{{sex_picker[sex_index]}}
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">体重</view>
+		<picker bindchange="weightSetting" value="{{weight_index}}" range="{{weight_picker}}">
+			<view class="picker">
+				{{weight_picker[weight_index]}} Kg
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">身高</view>
+		<picker bindchange="heightSetting" value="{{height_index}}" range="{{height_picker}}">
+			<view class="picker">
+				{{height_picker[height_index]}} Cm
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group margin-top">
+		<view class="title">路程目标</view>
+		<picker bindchange="distanceSetting" value="{{distance_index}}" range="{{distance_picker}}">
+			<view class="picker">
+				{{distance_picker[distance_index]}} Km
+			</view>
+		</picker>
+	</view>
+	<view class="cu-form-group">
+		<view class="title">卡路里目标</view>
+		<picker bindchange="kcalSetting" value="{{kcal_index}}" range="{{kcal_picker}}">
+			<view class="picker">
+				{{kcal_picker[kcal_index]}} Kcal
+			</view>
+		</picker>
+	</view>
+
+	<view class="cu-form-group margin-top">
+		<view class="title">屏幕常亮</view>
+		<switch checked="{{keepScreenOn}}" bindtap="keepScreenOnSwitch"></switch>
+	</view>
+	<view class="cu-form-group ">
+		<view class="title">手机震动</view>
+		<switch checked="{{vibrate}}" bindtap="vibrateSwitch"></switch>
+	</view>
+	<view class="cu-form-group arrow">
+		<view class="title">后台定位</view>
+		<button class="cu-btn bg-orange" bindtap="settingMenu">设置</button>
+	</view>
+
+	<view class="cu-form-group margin-top">
+			<view class="title">清空数据</view>
+			<button class="cu-btn bg-red" bindtap="clearStorage">清除</button>
+		</view>
+
+</form>
