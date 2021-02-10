@@ -6,7 +6,7 @@
 运动海报,记录每一天的变化，分享好友相互勉励，在活力健身房健身不再是孤独的坚持。
 
 #### 小程序码
-![code](https://www.7gugu.com/wp-content/uploads/2020/06/2020061517402876.jpg)
+![code](https://www.7gugu.com/wp-content/uploads/2020/06/2020061517402876.jpg) 
 
 #### 特性
 
