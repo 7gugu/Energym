@@ -41,6 +41,12 @@
   			<text class="text-grey">BMI计算</text>
   		</navigator>
   	</view>
+    <view class="cu-item arrow">
+  		<navigator class="content" hover-class="none" bindtap="click" url="../bmp/index">
+  			<text class="cuIcon-like text-pink"></text>
+  			<text class="text-grey">心率测量</text>
+  		</navigator>
+  	</view>
   	<view class="cu-item arrow">
   		<navigator class="content" hover-class="none" bindtap="click" url="../setting/index">
   			<text class="cuIcon-settings text-grey"></text>
